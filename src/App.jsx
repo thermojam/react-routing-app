@@ -1,13 +1,17 @@
-
+import {Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
+import TaskDetail from "./pages/TaskDetail"
+import NotFound from "./pages/NotFound"
 
 export const App = () => {
-
-
-  return (
-      <>
-          <h1 className="text-8xl font-bold mb-6 text-center text-cyan-400">Hello Todos</h1>
-      </>
-  )
+    return (
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/task/:id" element={<TaskDetail />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
+        </Routes>
+    )
 }
 
 
