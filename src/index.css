@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Arounder';
+    src: url('assets/fonts/Arounder.otf') format('otf');
+}
+
+body {
+    font-family: 'Arounder', sans-serif;
+    @apply bg-[#1e1f24];
+}
