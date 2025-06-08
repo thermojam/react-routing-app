@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { useDebounce } from "./useDebounce"
+import {useEffect, useState} from "react"
+import {useDebounce} from "./useDebounce"
 
 export function useTodos() {
     const [todos, setTodos] = useState([])
@@ -21,8 +21,8 @@ export function useTodos() {
     const addTodo = (text) => {
         fetch("http://localhost:3330/todos", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text }),
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({text}),
         })
             .then((res) => res.json())
             .then((newTodo) => setTodos((prev) => [...prev, newTodo]))

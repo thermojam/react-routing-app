@@ -1,17 +1,18 @@
-import { useTodos } from "../hooks/useTodos"
+import {useTodos} from "../hooks/useTodos"
 import Spinner from "../components/Spinner"
 import TaskCard from "../components/TaskCard"
 import TaskForm from "../components/TaskForm"
 
 export default function Home() {
-    const { todos, loading, addTodo, query, setQuery, sortAsc, setSortAsc } = useTodos()
+    const {todos, loading, addTodo, query, setQuery, sortAsc, setSortAsc} = useTodos()
 
     return (
-        <div className="min-h-screen px-4 sm:px-2 py-10 bg-[#232527] text-white">
-            <div className="max-w-3xl mx-auto">
-                <h1 className="text-6xl font-bold mb-6 text-center text-cyan-400 mb-10">Todos Routing App</h1>
+        <div className="min-h-screen px-4 sm:px-2 py-10 bg-gradient-to-b from-[#1e1f24] via-[#23252d] to-[#18191f]">
+            <div className="max-w-3xl mx-auto ">
+                <h1 className="text-6xl font-bold mb-6 text-center bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-transparent bg-clip-text mb-10">Todos
+                    Routing App</h1>
 
-                <TaskForm onAdd={addTodo} />
+                <TaskForm onAdd={addTodo}/>
 
                 <div className="flex gap-2 mb-10">
                     <input
@@ -30,11 +31,11 @@ export default function Home() {
                 </div>
 
                 {loading ? (
-                    <Spinner />
+                    <Spinner/>
                 ) : (
                     <div className="space-y-2">
                         {todos.map((task) => (
-                            <TaskCard key={task.id} task={task} />
+                            <TaskCard key={task.id} task={task}/>
                         ))}
                     </div>
                 )}
